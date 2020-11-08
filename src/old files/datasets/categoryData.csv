@@ -1,0 +1,5 @@
+﻿index,aidCategory,aidCategoryCode,date,label,aidType,beneficiaryType,value,beneficiaryValue,shareOfPop,agency,agencyFull,agencyAllocated,agencyUsed,agencyStatus
+1,social welfare,social,7/1/20,Release date,credit,families,1000000000,20000,92,DSWD,Social Welfare and Development,2000000,2000000,100
+2,labor support,labor,7/1/20,Release date,repatriation,older adults,5000000000,1000000,32,DTI,Trade and Industry,3000000,3000000,100
+3,agriculture support,agriculture,6/1/20,Disbursement date,repatriation,farmers,8000000000,1000000,32,DAR,Agricultural Reform,3000000,3000000,100
+4,business support,business,5/1/20,Disbursement date,food packs,various,9000000000,1000000,32,DILG,The Interior and Local Government,3000000,3000000,100

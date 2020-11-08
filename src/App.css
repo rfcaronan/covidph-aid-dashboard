@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
+/* COLOR SCHEME
+
+White
+Black
+Light Grey
+Blue Green : #17a2b8 OR rgba(23,162,184)
+Blue Green : #0D98BA
+Blue Greeb : #10819E
+Red Orange: #BA3716 OR rgb(186,55,22)
+Purple Red: #af3b6e OR rgba(175,59,110)
+Purple Red: #99335F OR rgb(153,51,95)
+
+*/
+
+.text-purple {
+  color: #99335F !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-pelorous {
+  color: #10819E !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.unit-img {
+  max-width: 100% !important;
+  height: auto !important;
+  padding: 0;
+  margin: 0;
+}
+
+.thead-small {
+  font-size: 0.9rem !important;
+}
+
+/* PANEL CARDS */
+
+div.border-4 {
+  border: 0.2em solid #0d98ba !important;
+}
+
+/* LINKS */
+
+a,
+.pointer,
+.clickable {
+  cursor: pointer !important;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* TITLE AND SUBTITLE */
+
+.project-header {
+  /*font-family: "Playfair Display", serif !important;*/
+  font-weight: 700 !important;
+}
+
+
+div.project-subheader {
+  line-height: 1.4;
+}
+
+.font-weight-title {
+  font-weight: 500 !important;
+}
+
+/* TOOLTIP */
+
+/* Changing React Bootstrap Tooltip */
+.tooltip-inner {
+  color: black !important;
+  background-color: white !important;
+  border: .2em solid black !important;
+  border-radius: 0px !important;
+  text-align: left !important;
+  padding: 1em !important;
+}
+
+.larger-width-tooltip > .tooltip-inner {
+  max-width: 20em !important;
+}
+
+
+.tooltip.show {
+  opacity: 1 !important;
+}
+
+/*.btn,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}*/
+
+/* For the arrow */
+/* Source code here: https://stackoverflow.com/questions/44955201/bootstrap-4-change-tooltip-arrow-color */
+/*.bs-tooltip-auto[x-placement^="bottom"] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: #99335F !important;
+}
+.bs-tooltip-auto[x-placement^="top"] .arrow::before,
+.bs-tooltip-top .arrow::before {
+  border-top-color: #99335F !important;
+}
+.bs-tooltip-auto[x-placement^="left"] .arrow::before,
+.bs-tooltip-left .arrow::before {
+  border-left-color: #99335F !important;
+}
+.bs-tooltip-auto[x-placement^="right"] .arrow::before,
+.bs-tooltip-right .arrow::before {
+  border-right-color: #99335F !important;
+}*/
+
+/* TABLE */
+
+/* Pagination */
+
+.pagination > li.active > a {
+  color: #fff !important;
+  background-color: #6c757d !important;
+  border-color:#6c757d !important;
+}
+
+.pagination > li > a:hover {
+  background-color: rgba(242, 241, 239, 1);
+}
+
+th {
+  font-weight: 500 !important;
+}
+
+/* Column header click */
+/* source: https://stackoverflow.com/questions/45495668/removing-the-top-borders-and-edges-of-the-bootstrap-table */
+.noBorderOnClick th:focus {
+  outline: none !important;
+}
+
+/* DISABLED BUTTON */
+.disabled {
+  pointer-events: none !important;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 992px) {
+  nav.navbar {
+    background-color: white !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .sm-show {
+    visibility: show;
   }
-  to {
-    transform: rotate(360deg);
+  .lg-show {
+    visibility: hidden;
+  }
+  .display-none {
+    display: none !important;
+  }
+
+  a.project-header {
+    font-size: 1.5rem !important;
+    padding: 0.5em 0 !important;
   }
 }
+
+/*@media (max-width: 480px) {
+  div {
+    padding: 2px !important;
+    margin: 0px !important;
+    /*overflow-x: hidden;
+  }
+
+  div.with-padding {
+    padding: 20px !important;
+  }
+
+  header.without-padding {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+
+  a.project-header {
+    font-size: 1.7rem !important;
+    padding: 0.5em 0 !important;
+  }
+
+  a.nav-item {
+    font-size: 1.5rem !important;
+  }
+
+  nav > div.navbar-collapse {
+    background-color: white !important;
+    /*color: #0d98ba !important;
+  }
+
+  .card-title {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media (max-width: 300px) {
+  h1.display-4 {
+    font-size: 2.9rem !important;
+  }
+  .card-title {
+    font-size: 1rem !important;
+  }
+}*/

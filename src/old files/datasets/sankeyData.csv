@@ -1,0 +1,8 @@
+﻿aidCategory,from,to,weight
+social welfare,DBM,DSWD,10
+social welfare,DSWD,LGUs,50
+social welfare,DBM,DSWD,10
+labor support,DBM,DOLE,20
+business support,DBM,CHED,10
+agriculture support,DBM,DTI,60
+agriculture support,DTI,LGUs,10
