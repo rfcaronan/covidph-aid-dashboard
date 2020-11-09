@@ -17,8 +17,9 @@ export const ChartCard = (props) => {
           {props.cardContent}
         </div>
         <div className="pt-2">
-          <p className="p-0 m-0 small font-italic">{props.notes}</p>
-          <p className="p-0 m-0 small font-italic">{props.sources}</p>
+          <p className="d-flex p-0 m-0 small font-italic">
+            {props.notes} {props.sources}
+          </p>
         </div>
       </div>
     </div>

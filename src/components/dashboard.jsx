@@ -415,15 +415,17 @@ class Dashboard extends Component {
 
             <div className="col-lg-6 col-md-12 col-sm-12 p-0 m-0 order-4">
               <ChartCard
-                index={getTextInput("panel6_heading").map((d) => d[0])}
-                cardTitle={getTextInput("panel6_heading").map((d) => d[1])}
+                index={getTextInput("panel5_heading").map((d) => d[0])}
+                cardTitle={getTextInput("panel5_heading").map((d) => d[1])}
+                notes={getTextInput("panel5_notes").map((d) => d[1])}
+                sources={getTextInput("panel5_sources").map((d) => d[1])}
                 cardContent={
                   <React.Fragment>
                     <div className="p-0">
                       <StackedBarChart
                         title={"agency"}
                         firstLabel={"Used"}
-                        secondLabel={"Allocation"}
+                        secondLabel={"Allotment"}
                         data={
                           !this.state.isClicked
                             ? CreateArrayAgencyType(this.state.data)
@@ -439,15 +441,15 @@ class Dashboard extends Component {
                     />
                   </React.Fragment>
                 }
-                notes={""}
-                /*sources={getTextInput("panel5_sources")} */
               />
             </div>
 
             <div className="col-lg-6 col-md-12 col-sm-12 p-0 m-0 order-5">
               <ChartCard
-                index={getTextInput("panel5_heading").map((d) => d[0])}
-                cardTitle={getTextInput("panel5_heading").map((d) => d[1])}
+                index={getTextInput("panel6_heading").map((d) => d[0])}
+                cardTitle={getTextInput("panel6_heading").map((d) => d[1])}
+                notes={getTextInput("panel6_notes").map((d) => d[1])}
+                sources={getTextInput("panel6_sources").map((d) => d[1])}
                 cardContent={
                   <React.Fragment>
                     <div className="p-0">
@@ -468,8 +470,6 @@ class Dashboard extends Component {
                     />
                   </React.Fragment>
                 }
-                notes={""}
-                /*sources={getTextInput("panel5_sources")} */
               />
             </div>
 
@@ -477,6 +477,8 @@ class Dashboard extends Component {
               <ChartCard
                 index={getTextInput("panel8_heading").map((d) => d[0])}
                 cardTitle={getTextInput("panel8_heading").map((d) => d[1])}
+                notes={getTextInput("panel8_notes").map((d) => d[1])}
+                sources={getTextInput("panel8_sources").map((d) => d[1])}
                 cardContent={
                   <React.Fragment>
                     <div className="p-0 m-0">
@@ -504,14 +506,14 @@ class Dashboard extends Component {
                     />
                   </React.Fragment>
                 }
-                notes={""}
-                sources={getTextInput("panel8_sources").map((d) => d[1])}
               />
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 p-0 m-0 order-7">
               <ChartCard
                 index={getTextInput("panel9_heading").map((d) => d[0])}
                 cardTitle={getTextInput("panel9_heading").map((d) => d[1])}
+                notes={getTextInput("panel9_notes").map((d) => d[1])}
+                sources={getTextInput("panel9_sources").map((d) => d[1])}
                 cardContent={
                   <React.Fragment>
                     <div className="p-0">
@@ -532,8 +534,6 @@ class Dashboard extends Component {
                     />
                   </React.Fragment>
                 }
-                notes={""}
-                sources={getTextInput("panel9_sources").map((d) => d[1])}
               />
             </div>
           </div>
