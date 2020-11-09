@@ -100,8 +100,8 @@ class DoughnutChart extends Component {
               let percentage = oneDecimalPlace((currentValue / total) * 100);
 
               return [
+                percentage + "%",
                 parseIntegerMoney(data.datasets[0].data[tooltipItem.index]),
-                percentage + "% of total aid",
               ];
             },
           },
@@ -132,6 +132,8 @@ class DoughnutChart extends Component {
     this.myChart.data.labels = this.props.data.map((d) => d.label);
     this.myChart.data.datasets[0].data = this.props.data.map((d) => d.value);
     this.myChart.update();
+
+    console.log(this.props.data);
   }
 
   render() {

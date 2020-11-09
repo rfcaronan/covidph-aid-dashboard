@@ -166,12 +166,12 @@ export const CreateArrayExternalSource = (data) => {
           label: sentenceCase(item.sourceType),
           financier: titleCase(item.financier),
           value: parseFloat(0),
-          convertedValue: parseFloat(0),
+          valuePerLoan: parseFloat(0),
         };
         newArray.push(res[item.sourceType]);
       }
-      res[item.sourceType].value += parseFloat(item.value);
-      res[item.sourceType].convertedValue += parseFloat(item.convertedValue);
+      res[item.sourceType].value += parseFloat(item.convertedValue);
+      res[item.sourceType].valuePerLoan += parseFloat(item.value);
       return res;
     }, {});
   newArray.sort(function (a, b) {
@@ -290,7 +290,7 @@ export const CreateArrayAgencyType = (data) => {
       if (!res[item.agency]) {
         res[item.agency] = {
           index: item.index,
-          agency: item.agency,
+          label: item.agency,
           agencyName: item.agencyName,
           value1: 0,
           value2: 0,
@@ -319,15 +319,19 @@ export const CreateArrayBeneficiaryType = (data) => {
           index: item.index,
           assistanceType: item.assistanceType,
           infoText: item.assistanceType + ": " + item.infoText,
-          beneficiaryType: sentenceCase(item.beneficiaryType),
+          label: item.beneficiaryType,
+          beneficiaryCategory: sentenceCase(item.beneficiaryCategory),
           link: item.link,
-          label: item.beneficiaryCategory,
           shareOfPop:
-            item.shareOfPop === "no data"
-              ? sentenceCase(item.shareOfPop)
-              : oneDecimalPlace(item.shareOfPop) + "%",
+            item.shareOfPop === ""
+              ? ""
+              : oneDecimalPlace(item.shareOfPop * 100) + "%",
           // Number of beneficiaries
           beneficiaryValue: 0,
+          popOfBeneficiaryCategory:
+            item.popOfBeneficiaryCategory === ""
+              ? ""
+              : convertValue(item.popOfBeneficiaryCategory),
           // Total amount of aid type
           value: 0,
         };
@@ -477,7 +481,8 @@ export const getNewDataBeneficiary = (data, filterItem) => {
   let newArray = [];
   data
     .filter(
-      ({ beneficiaryType }) => beneficiaryType === convertToString(filterItem)
+      ({ beneficiaryType }) =>
+        beneficiaryType === convertToString(filterItem).toLowerCase()
     )
     .map((item) =>
       newArray.push({
@@ -501,6 +506,7 @@ export const getNewDataBeneficiary = (data, filterItem) => {
         infoText: item.infoText,
         assistanceType: item.assistanceType,
         saroAllotment: item.saroAllotment,
+        popOfBeneficiaryCategory: item.popOfBeneficiaryCategory,
       })
     );
   newArray.sort(function (a, b) {

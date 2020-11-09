@@ -24,6 +24,7 @@ import {
   CreateArrayAgencyType,
   CreateArrayAidCategory,
   CreateArrayAidType,
+  CreateArrayBeneficiaryType,
   CreateArrayDateExpenditure,
   CreateArrayLocation,
   CreateArrayExternalSource,
@@ -123,6 +124,8 @@ class Dashboard extends Component {
       let title = convertToString(datasets.datasets[0].title);
       let label = datasets.labels[firstPoint];
 
+      console.log(label);
+
       this.setState({
         isClicked: true,
         aidCategoryData:
@@ -134,6 +137,8 @@ class Dashboard extends Component {
             ? getNewDataAgency(this.state.data, label)
             : title === "location"
             ? getNewDataLocation(this.state.data, label)
+            : title === "beneficiaryType"
+            ? getNewDataBeneficiary(this.state.data, label)
             : null,
       });
     } else {
@@ -380,7 +385,7 @@ class Dashboard extends Component {
                 index={getTextInput("panel4_heading").map((d) => d[0])}
                 cardTitle={getTextInput("panel4_heading").map((d) => d[1])}
                 notes={getTextInput("panel4_notes").map((d) => d[1])}
-                sources={getTextInput("panel4_sources").map((d) => d[1])}
+                //sources={getTextInput("panel4_sources").map((d) => d[1])}
                 actionButton={
                   <div class="d-flex flex-row-reverse">
                     <BasicButton buttonLabel="Week" className="active" />
@@ -405,8 +410,8 @@ class Dashboard extends Component {
                     annotationText3="May 31"
                     annotationXAdjustText3={-300}
                     annotationYAdjustText3={-7}
-                    annotationText4="ECQ ended. MECQ or GECQ took effect"
-                    annotationXAdjustText4={-435}
+                    annotationText4="ECQ ended. MECQ or GCQ took effect"
+                    annotationXAdjustText4={-430}
                     annotationYAdjustText4={-6}
                   />
                 }
@@ -418,7 +423,7 @@ class Dashboard extends Component {
                 index={getTextInput("panel5_heading").map((d) => d[0])}
                 cardTitle={getTextInput("panel5_heading").map((d) => d[1])}
                 notes={getTextInput("panel5_notes").map((d) => d[1])}
-                sources={getTextInput("panel5_sources").map((d) => d[1])}
+                //sources={getTextInput("panel5_sources").map((d) => d[1])}
                 cardContent={
                   <React.Fragment>
                     <div className="p-0">
@@ -449,7 +454,7 @@ class Dashboard extends Component {
                 index={getTextInput("panel6_heading").map((d) => d[0])}
                 cardTitle={getTextInput("panel6_heading").map((d) => d[1])}
                 notes={getTextInput("panel6_notes").map((d) => d[1])}
-                sources={getTextInput("panel6_sources").map((d) => d[1])}
+                //sources={getTextInput("panel6_sources").map((d) => d[1])}
                 cardContent={
                   <React.Fragment>
                     <div className="p-0">
@@ -473,12 +478,12 @@ class Dashboard extends Component {
               />
             </div>
 
-            <div className="col-lg-8 col-md-12 col-sm-12 p-0 m-0 order-6">
+            <div className="col-lg-8 col-md-12 d-none d-xl-block d-lg-block d-md-block p-0 m-0 order-6">
               <ChartCard
                 index={getTextInput("panel8_heading").map((d) => d[0])}
                 cardTitle={getTextInput("panel8_heading").map((d) => d[1])}
                 notes={getTextInput("panel8_notes").map((d) => d[1])}
-                sources={getTextInput("panel8_sources").map((d) => d[1])}
+                //sources={getTextInput("panel8_sources").map((d) => d[1])}
                 cardContent={
                   <React.Fragment>
                     <div className="p-0 m-0">
@@ -508,12 +513,44 @@ class Dashboard extends Component {
                 }
               />
             </div>
+
+            <div className="col-lg-8 col-md-12 d-block d-sm-block d-md-none d-lg-none d-xl-none p-0 m-0 order-6">
+              <ChartCard
+                index={getTextInput("panel8_heading").map((d) => d[0])}
+                cardTitle={getTextInput("panel8_heading").map((d) => d[1])}
+                notes={getTextInput("panel8_notes").map((d) => d[1])}
+                //sources={getTextInput("panel8_sources").map((d) => d[1])}
+                cardContent={
+                  <React.Fragment>
+                    <div className="p-0 m-0">
+                      <HorizontalBarChart
+                        title={"beneficiaryType"}
+                        data={
+                          !this.state.isClicked
+                            ? CreateArrayBeneficiaryType(this.state.data)
+                            : CreateArrayBeneficiaryType(
+                                this.state.aidCategoryData
+                              )
+                        }
+                        aspectRatio={!this.state.isClicked ? 1 : 2}
+                        handleChartClick={this.handleChartClick}
+                      />
+                    </div>
+                    <ResetButton
+                      onClick={this.resetClick}
+                      className={!this.state.isClicked ? "d-none" : ""}
+                    />
+                  </React.Fragment>
+                }
+              />
+            </div>
+
             <div className="col-lg-4 col-md-12 col-sm-12 p-0 m-0 order-7">
               <ChartCard
                 index={getTextInput("panel9_heading").map((d) => d[0])}
                 cardTitle={getTextInput("panel9_heading").map((d) => d[1])}
                 notes={getTextInput("panel9_notes").map((d) => d[1])}
-                sources={getTextInput("panel9_sources").map((d) => d[1])}
+                //sources={getTextInput("panel9_sources").map((d) => d[1])}
                 cardContent={
                   <React.Fragment>
                     <div className="p-0">

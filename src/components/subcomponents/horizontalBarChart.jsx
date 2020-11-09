@@ -94,10 +94,10 @@ class HorizontalBarChart extends Component {
               let percentage = oneDecimalPlace((currentValue / total) * 100);
 
               return [
+                percentage + "%",
                 parseIntegerMoney(
                   data["datasets"][0]["data"][tooltipItem["index"]]
                 ),
-                percentage + "% of total aid",
               ];
             },
           },
@@ -115,8 +115,10 @@ class HorizontalBarChart extends Component {
           yPadding: 10,
           displayColors: false,
         },
-        mode: "point",
-        intersect: true,
+        hover: {
+          mode: "nearest",
+          intersect: true,
+        },
         onClick: this.props.handleChartClick,
       },
     });

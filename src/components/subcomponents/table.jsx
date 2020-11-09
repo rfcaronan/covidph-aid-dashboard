@@ -10,9 +10,10 @@ import {
   CreateArrayBeneficiaryType,
   CreateArrayExternalSource,
   CreateArrayInternalSource,
-  parseInteger,
-  parseIntegerMoney,
+  //parseInteger,
+  //parseIntegerMoney,
   CreateArrayTopThreeSource,
+  sentenceCase,
 } from "./functions";
 
 export const Beneficiaries = (props) => {
@@ -22,11 +23,17 @@ export const Beneficiaries = (props) => {
     return <InfoText infoText={cell} />;
   }
 
+  function valueFormatter(cell) {
+    return "₱" + convertValue(cell);
+  }
+
   const columns = [
     {
-      dataField: "beneficiaryType",
+      dataField: "label",
       text: "Beneciary",
+      headerAttrs: { width: "28%" },
       headerAlign: "center",
+      formatter: sentenceCase,
       classes: (cell, row, rowIndex, colIndex) => {
         return "text-pelorous clickable";
       },
@@ -35,39 +42,52 @@ export const Beneficiaries = (props) => {
       },
     },
     {
-      dataField: "beneficiaryValue",
-      text: "No. Served",
-      headerAttrs: { width: "23%" },
+      dataField: "beneficiaryCategory",
+      text: "Unit",
+      headerAlign: "center",
+    },
+    {
+      dataField: "popOfBeneficiaryCategory",
+      text: "Population of Unit",
       type: "number",
-      sort: true,
+      sort: false,
       headerAlign: "center",
       align: "right",
-      formatter: parseInteger,
       /*sortCaret: caretDesign,*/
     },
     {
+      dataField: "beneficiaryValue",
+      text: "Actual Served",
+      type: "number",
+      sort: false,
+      headerAlign: "center",
+      align: "right",
+      formatter: convertValue,
+      /*sortCaret: caretDesign,*/
+    },
+
+    {
       dataField: "shareOfPop",
-      text: "% of Actual Population",
-      headerAttrs: { width: "23%" },
-      sort: true,
+      text: "% of Served to Population",
+      sort: false,
       headerAlign: "center",
       align: "center",
       /*sortCaret: caretDesign,*/
     },
     {
       dataField: "value",
-      text: "Amount",
+      text: "Actual Spent",
       type: "number",
       sort: true,
       headerAlign: "center",
       align: "right",
-      formatter: parseIntegerMoney,
+      formatter: valueFormatter,
       /*sortCaret: caretDesign,*/
     },
     {
       dataField: "infoText",
       text: "",
-      headerAttrs: { width: 30 },
+      headerAttrs: { width: 10 },
       formatter: rankFormatter,
     },
   ];

@@ -94,13 +94,22 @@ class StackedBarChart extends Component {
                   100
               );
 
-              if (tooltipItem.datasetIndex !== data.datasets.length - 1) {
-                return [
-                  percentage + "% of total allocation spent",
-                  label + ": " + parseIntegerMoney(value),
-                ];
+              if (data.datasets[1].data[tooltipItem.index] === 0) {
+                if (value === 0) {
+                  return "";
+                } else {
+                  return label + ": " + parseIntegerMoney(value);
+                }
               } else {
-                return [label + ": " + parseIntegerMoney(value)];
+                if (tooltipItem.datasetIndex !== data.datasets.length - 1) {
+                  return [
+                    "Spent " + percentage + "% of its total allotment",
+                    "",
+                    label + ": " + parseIntegerMoney(value),
+                  ];
+                } else {
+                  return [label + ": " + parseIntegerMoney(value)];
+                }
               }
             },
           },
@@ -125,7 +134,7 @@ class StackedBarChart extends Component {
   }
   componentDidUpdate() {
     this.myChart.data.labels = this.props.data.map((d) =>
-      sentenceCase(d.agency)
+      sentenceCase(d.label)
     );
     this.myChart.data.datasets[0].data = this.props.data.map((d) => d.value2);
     this.myChart.data.datasets[1].data = this.props.data.map((d) => d.value1);

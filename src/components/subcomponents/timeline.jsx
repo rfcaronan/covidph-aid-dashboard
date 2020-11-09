@@ -210,6 +210,10 @@ class Timeline extends Component {
           yPadding: 10,
           displayColors: false,
         },
+        hover: {
+          mode: "nearest",
+          intersect: true,
+        },
         onClick: this.props.onClickEvent,
       },
     });
