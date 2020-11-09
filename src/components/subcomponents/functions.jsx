@@ -326,13 +326,11 @@ export const CreateArrayBeneficiaryType = (data) => {
             item.shareOfPop === ""
               ? ""
               : oneDecimalPlace(item.shareOfPop * 100) + "%",
-          // Number of beneficiaries
           beneficiaryValue: 0,
           popOfBeneficiaryCategory:
             item.popOfBeneficiaryCategory === ""
               ? ""
               : convertValue(item.popOfBeneficiaryCategory),
-          // Total amount of aid type
           value: 0,
         };
         newArray.push(res[item.beneficiaryType]);
@@ -399,6 +397,7 @@ export const getNewDataAidCategory = (data, filterItem) => {
         infoText: item.infoText,
         assistanceType: item.assistanceType,
         saroAllotment: item.saroAllotment,
+        popOfBeneficiaryCategory: item.popOfBeneficiaryCategory,
       })
     );
   newArray.sort(function (a, b) {
@@ -435,6 +434,7 @@ export const getNewDataAidType = (data, filterItem) => {
         infoText: item.infoText,
         assistanceType: item.assistanceType,
         saroAllotment: item.saroAllotment,
+        popOfBeneficiaryCategory: item.popOfBeneficiaryCategory,
       })
     );
   newArray.sort(function (a, b) {
@@ -469,6 +469,7 @@ export const getNewDataAgency = (data, filterItem) => {
         infoText: item.infoText,
         assistanceType: item.assistanceType,
         saroAllotment: item.saroAllotment,
+        popOfBeneficiaryCategory: item.popOfBeneficiaryCategory,
       })
     );
   newArray.sort(function (a, b) {
@@ -541,6 +542,7 @@ export const getNewDataLocation = (data, filterItem) => {
         infoText: item.infoText,
         assistanceType: item.assistanceType,
         saroAllotment: item.saroAllotment,
+        popOfBeneficiaryCategory: item.popOfBeneficiaryCategory,
       })
     );
   newArray.sort(function (a, b) {
