@@ -375,6 +375,10 @@ class Dashboard extends Component {
                         onHoverEvent={() => this.handleOnHover(item.index)}
                       />
                     ))}
+                    <ResetButton
+                      onClick={this.resetClick}
+                      className={!this.state.isClicked ? "d-none" : ""}
+                    />
                   </div>
                 }
               />
@@ -389,7 +393,6 @@ class Dashboard extends Component {
                 actionButton={
                   <div class="d-flex flex-row-reverse">
                     <BasicButton buttonLabel="Week" className="active" />
-                    <BasicButton buttonLabel="Day" className="disabled" />
                   </div>
                 }
                 cardContent={
@@ -403,16 +406,16 @@ class Dashboard extends Component {
                     }
                     annotationText1="March 16–April 30"
                     annotationXAdjustText1={-50}
-                    annotationYAdjustText1={-6}
+                    annotationYAdjustText1={-5}
                     annotationText2="Luzon was under ECQ"
                     annotationXAdjustText2={-60}
-                    annotationYAdjustText2={10}
+                    annotationYAdjustText2={11}
                     annotationText3="May 31"
                     annotationXAdjustText3={-300}
-                    annotationYAdjustText3={-7}
+                    annotationYAdjustText3={-5}
                     annotationText4="ECQ ended. MECQ or GCQ took effect"
                     annotationXAdjustText4={-430}
-                    annotationYAdjustText4={-6}
+                    annotationYAdjustText4={-5}
                   />
                 }
               />

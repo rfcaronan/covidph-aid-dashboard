@@ -325,7 +325,7 @@ export const CreateArrayBeneficiaryType = (data) => {
           shareOfPop:
             item.shareOfPop === ""
               ? ""
-              : oneDecimalPlace(item.shareOfPop * 100) + "%",
+              : oneDecimalPlace(item.shareOfPop * 100),
           beneficiaryValue: 0,
           popOfBeneficiaryCategory:
             item.popOfBeneficiaryCategory === ""

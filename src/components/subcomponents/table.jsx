@@ -68,10 +68,13 @@ export const Beneficiaries = (props) => {
 
     {
       dataField: "shareOfPop",
-      text: "% of Served to Population",
+      text: "% of Served to Population of Unit",
       sort: false,
       headerAlign: "center",
       align: "center",
+      classes: (cell, row, rowIndex, colIndex) => {
+        return cell > 100 || cell < 0 ? "text-warning" : "text-pelorous";
+      },
       /*sortCaret: caretDesign,*/
     },
     {
