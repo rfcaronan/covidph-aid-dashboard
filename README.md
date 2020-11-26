@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tracking the National Government's Covid-19 Aid Spending
 
-## Available Scripts
+This is a dashboard built as a part of a coursework for MSc in Computational and Data Journalism at Cardiff University.
 
-In the project directory, you can run:
+This analytical dashboard contains information on the Philippine national government’s spending on social and economic assistance to Filipinos during the covid-19 pandemic. The current version covers data from 17 March to 31 August 2020, but a few portions reflect data as of 4 November 2020. It is planned to be manually updated on a weekly basis or as data becomes available.
 
-### `npm start`
+It was intended to support journalists covering the pandemic in the Philippines, but it may also be used by researchers, budget transparency advocates, and the public interested in aid data.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Navigate this site
 
-### `npm test`
+The dashboard has seven sections. The first section displays the total amount set aside by the national government to address the pandemic and that spent on aid. The subsequent sections break down the total aid allocation into six areas of analysis: 1) areas of focus, 2) disbursement timeline, 3) implementing agencies, 4) types of aid, 5) types of beneficiaries, and 6) location of beneficiaries. Each section contains labels and visual elements. Five visual elements feature user interactions, such as clickable elements and filtering options.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Data is presented in interactive graphs and made available for download.
 
-### `npm run build`
+## Data sources
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Asian Development Bank's [Projects and Tenders in the Philippines](https://www.adb.org/projects/country/phi)
+Asian Infrastructure Investment Bank's [Projects](https://www.aiib.org/en/projects/list/index.html)
+Bangko Sentral ng Pilipinas's [Data on Daily, monthly (average and end- of-period) and annual Peso per US dollar](https://www.bsp.gov.ph/statistics/external/pesodollar.xls)
+Bayanihan to Heal as One Act 2020
+Department of Budget and Management's [Status of COVID-19 Releases](https://www.dbm.gov.ph/index.php/programs-projects/status-of-covid-19-releases)
+Department of Social Welfare and Development's [SAP monitoring dashboard for emergency subsidy under AICS-tables](https://public.tableau.com/profile/dswd.gis#!/vizhome/SAPMonitoringDashboardforEmergcencySubsidyunderAICS-Tables/Dashboard1)
+Disaster Response Operations Monitoring and Information Center's [Report on the Coronavirus Disease (COVID19) from March 26 to August 31, 2020](https://dromic.dswd.gov.ph/coronavirus-disease-covid-19-31-dec-2019/?fbclid=IwAR0Z5v9LYXCay_d-ydb-TD3pNBdi6Icd1bKRP0pU7AW_O97NMYSwYELNKpU)
+Japan International Cooperation Agency's [ODA Loan Projects](https://www2.jica.go.jp/en/yen_loan/index.php/module/search?anken_name=&area1=0&area2=0&area3=0&country1=73&country2=0&country3=0&section1=0&section2=0&section3=0&industry1=0&industry2=0&industry3=0&chotatsu_kubun=0&from_year=&to_year=&currency=jpy&submit=Search)
+Office of the President's [Reports to the Joint Congressional Oversight Committees](https://www.officialgazette.gov.ph/masterlist-generator/?category=other-issuances&president=rodrigo-roa-duterte&per_page=10&on_order=DESC)
+The World Bank's [Projects](https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=PH)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Data processing
 
-### `npm run eject`
+Tabula was used for turning tables from PDF and Word documents into spreadsheets. Python was used to scrape documents from websites and to clean and combine various datasets. Microsoft Excel was used for performing simple cleaning and analysis of data.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The following libraries were used: React v16.13.1 for building the user interface, React Helmet v6.1.0 for managing the document head section (Huffman 2019), Bootstrap v4.5.3 for creating the layout, Chart.js and chartjs-plugin-annotation.js v0.5.7 for the visualisations, react-papaparse v3.8.0 for parsing CSV files to JSON, react-bootstrap-table2 v4.0.3 (Fang 2020) for rendering Bootstrap tables in React components, React-Bootstrap for rendering Bootstrap tooltips in React components, and Font Awesome for the icons.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Publication
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project was published in November 2020.
