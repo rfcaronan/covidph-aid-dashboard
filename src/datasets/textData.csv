@@ -1,11 +1,11 @@
 ﻿index,textType,text,link
 1,header,Tracking the national government's covid-19 aid spending,index
-2,subhead,Explore how the government spends billions of pesos to help Filipinos through the coronavirus crisis.,
-3,nav-item,About this data,data
-4,nav-item,Budget 101,budget
-5,footer-item,About this data,data
-6,footer-item,Budget 101,budget
-7,footer-item,Published in 2020,index
+2,subhead,Explore how the government spends billions of pesos to help Filipinos through the coronavirus crisis. Click on category and graphical items to filter and analyze the data.,
+3,nav-item,This is a project for an MSc in Computational and Data Journalism. This version covers the assistance under the first Bayanihan law.,
+4,nav-item,,
+5,footer-item,This is a project for an MSc in Computational and Data Journalism.,data
+6,footer-item,Published in 2020,budget
+7,footer-item,,index
 8,footer-item,,
 9,panel1_text1,"To fight coronavirus, the national government has secured",
 10,panel1_amount1,,

@@ -3,16 +3,17 @@
 import React, { Component } from "react";
 import { readRemoteFile } from "react-papaparse";
 import { titleCase } from "./subcomponents/functions";
+import { CSVLink } from "react-csv";
 
 class Header extends Component {
   constructor(props) {
     super();
     this.state = {
+      fullData: [],
       data: [],
-      menu: false,
     };
     this.updateData = this.updateData.bind(this);
-    this.toggleMenu = this.toggleMenu.bind(this);
+    this.updateMainData = this.updateMainData.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +25,14 @@ class Header extends Component {
       onError: this.handleOnError,
       complete: this.updateData,
     });
+
+    readRemoteFile(require("../datasets/mainData.csv"), {
+      header: true,
+      download: true,
+      skipEmptyLines: true,
+      onError: this.handleOnError,
+      complete: this.updateMainData,
+    });
   }
 
   updateData(result) {
@@ -31,29 +40,23 @@ class Header extends Component {
     this.setState({ data: data });
   }
 
-  toggleMenu() {
-    this.setState({ menu: !this.state.menu });
+  updateMainData(result) {
+    const data = result.data;
+    this.setState({ fullData: data });
+  }
+
+  componentDidUpdate() {
+    this.state.fullData = this.state.fullData;
   }
 
   render() {
-    const show = this.state.menu ? "show bg-white" : "";
-    const hide = this.state.menu ? "" : "show";
-
+    console.log(this.state.fullData);
     return (
-      <header className="without-padding m-0">
-        {/* Here goes the hamburger menu */}
-        <nav className="navbar navbar-expand-lg navbar-light">
-          <button
-            className={"navbar-toggler p-2"}
-            type="button"
-            onClick={this.toggleMenu}
-          >
-            <span className={"navbar-toggler-icon"}></span>
-          </button>
-
-          <div className={"col-lg-9 p-2 m-0 collapse navbar-collapse " + hide}>
-            <div className={"row m-0 p-0"}>
-              <div className={"col-lg-12 px-1 py-0 m-0"}>
+      <header className="without-padding m-0 p-0">
+        <div className="row m-0 p-3">
+          <div className="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+            <div className="row m-0 p-0">
+              <div className="col-lg-12 p-0 m-0">
                 {/* Title of the project */}
                 {this.state.data
                   .filter(({ textType }) => textType === "header")
@@ -67,7 +70,7 @@ class Header extends Component {
                     </a>
                   ))}
               </div>
-              <div className="col project-subheader px-1 m-0">
+              <div className="col project-subheader p-0 m-0">
                 {/* Subtitle */}
                 {this.state.data
                   .filter(({ textType }) => textType === "subhead")
@@ -77,24 +80,33 @@ class Header extends Component {
               </div>
             </div>
           </div>
+          <div className="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+            <div className="row m-0 p-0">
+              <div className="col-lg-12 m-0 p-0">
+                <div
+                  class="progress-bar bg-info"
+                  style={{ width: "15%", height: "8px" }}
+                ></div>
+              </div>
 
-          <div className={"col-lg-3 collapse navbar-collapse p-1 " + show}>
-            {/* Display the list of nav items horizontally */}
-            <div className="navbar-nav text-muted">
-              {this.state.data
-                .filter(({ textType }) => textType === "nav-item")
-                .map((item) => (
-                  <a
-                    key={item.index}
-                    className="nav-item nav-link"
-                    href={"/" + item.link}
-                  >
-                    {item.text}{" "}
-                  </a>
-                ))}
+              <div className="d-inline">
+                {this.state.data
+                  .filter(({ textType }) => textType === "nav-item")
+                  .map((item) => (
+                    <p key={item.index} className="d-inline">
+                      {item.text}{" "}
+                    </p>
+                  ))}
+
+                <u>
+                  <CSVLink data={this.state.fullData} filename={"dataset.csv"}>
+                    Download the dataset here.
+                  </CSVLink>
+                </u>
+              </div>
             </div>
           </div>
-        </nav>
+        </div>
       </header>
     );
   }

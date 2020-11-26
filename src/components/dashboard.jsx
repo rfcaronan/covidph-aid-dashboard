@@ -324,7 +324,7 @@ class Dashboard extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg col-md-6 p-0 pl-2 m-0 order-2">
+                <div className="col-lg col-md-6 p-0 pl-0 m-0 order-2">
                   <ChartCard
                     index={getTextInput("panel2_text1").map((d) => d[0])}
                     cardTitle={getTextInput("panel2_text1").map((d) => d[1])}
