@@ -34,7 +34,7 @@ Tabula was used for turning tables from PDF and Word documents into spreadsheets
 
 ## Technologies used
 
-The following libraries were used: React v16.13.1 for building the user interface, React Helmet v6.1.0 for managing the document head section (Huffman 2019), Bootstrap v4.5.3 for creating the layout, Chart.js and chartjs-plugin-annotation.js v0.5.7 for the visualisations, react-papaparse v3.8.0 for parsing CSV files to JSON, react-bootstrap-table2 v4.0.3 (Fang 2020) for rendering Bootstrap tables in React components, React-Bootstrap for rendering Bootstrap tooltips in React components, and Font Awesome for the icons.
+The following libraries were used: React v16.13.1 for building the user interface, React Helmet v6.1.0 for managing the document head section, Bootstrap v4.5.3 for creating the layout, Chart.js and chartjs-plugin-annotation.js v0.5.7 for the visualisations, react-papaparse v3.8.0 for parsing CSV files to JSON, react-bootstrap-table2 v4.0.3 for rendering Bootstrap tables in React components, React-Bootstrap for rendering Bootstrap tooltips in React components, and Font Awesome for the icons.
 
 
 ## Publication
