@@ -15,16 +15,16 @@ Data is presented in interactive graphs and made available for download.
 
 ## Data sources
 
-Asian Development Bank's [Projects and Tenders in the Philippines](https://www.adb.org/projects/country/phi)
-Asian Infrastructure Investment Bank's [Projects](https://www.aiib.org/en/projects/list/index.html)
-Bangko Sentral ng Pilipinas's [Data on Daily, monthly (average and end- of-period) and annual Peso per US dollar](https://www.bsp.gov.ph/statistics/external/pesodollar.xls)
-Bayanihan to Heal as One Act 2020
-Department of Budget and Management's [Status of COVID-19 Releases](https://www.dbm.gov.ph/index.php/programs-projects/status-of-covid-19-releases)
-Department of Social Welfare and Development's [SAP monitoring dashboard for emergency subsidy under AICS-tables](https://public.tableau.com/profile/dswd.gis#!/vizhome/SAPMonitoringDashboardforEmergcencySubsidyunderAICS-Tables/Dashboard1)
-Disaster Response Operations Monitoring and Information Center's [Report on the Coronavirus Disease (COVID19) from March 26 to August 31, 2020](https://dromic.dswd.gov.ph/coronavirus-disease-covid-19-31-dec-2019/?fbclid=IwAR0Z5v9LYXCay_d-ydb-TD3pNBdi6Icd1bKRP0pU7AW_O97NMYSwYELNKpU)
-Japan International Cooperation Agency's [ODA Loan Projects](https://www2.jica.go.jp/en/yen_loan/index.php/module/search?anken_name=&area1=0&area2=0&area3=0&country1=73&country2=0&country3=0&section1=0&section2=0&section3=0&industry1=0&industry2=0&industry3=0&chotatsu_kubun=0&from_year=&to_year=&currency=jpy&submit=Search)
-Office of the President's [Reports to the Joint Congressional Oversight Committees](https://www.officialgazette.gov.ph/masterlist-generator/?category=other-issuances&president=rodrigo-roa-duterte&per_page=10&on_order=DESC)
-The World Bank's [Projects](https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=PH)
+Asian Development Bank's [Projects and Tenders in the Philippines](https://www.adb.org/projects/country/phi)  
+Asian Infrastructure Investment Bank's [Projects](https://www.aiib.org/en/projects/list/index.html)  
+Bangko Sentral ng Pilipinas's [Data on Daily, monthly (average and end- of-period) and annual Peso per US dollar](https://www.bsp.gov.ph/statistics/external/pesodollar.xls)  
+Bayanihan to Heal as One Act 2020  
+Department of Budget and Management's [Status of COVID-19 Releases](https://www.dbm.gov.ph/index.php/programs-projects/status-of-covid-19-releases)  
+Department of Social Welfare and Development's [SAP monitoring dashboard for emergency subsidy under AICS-tables](https://public.tableau.com/profile/dswd.gis#!/vizhome/SAPMonitoringDashboardforEmergcencySubsidyunderAICS-Tables/Dashboard1)  
+Disaster Response Operations Monitoring and Information Center's [Report on the Coronavirus Disease (COVID19) from March 26 to August 31, 2020](https://dromic.dswd.gov.ph/coronavirus-disease-covid-19-31-dec-2019/?fbclid=IwAR0Z5v9LYXCay_d-ydb-TD3pNBdi6Icd1bKRP0pU7AW_O97NMYSwYELNKpU)  
+Japan International Cooperation Agency's [ODA Loan Projects](https://www2.jica.go.jp/en/yen_loan/index.php/module/search?anken_name=&area1=0&area2=0&area3=0&country1=73&country2=0&country3=0&section1=0&section2=0&section3=0&industry1=0&industry2=0&industry3=0&chotatsu_kubun=0&from_year=&to_year=&currency=jpy&submit=Search)  
+Office of the President's [Reports to the Joint Congressional Oversight Committees](https://www.officialgazette.gov.ph/masterlist-generator/?category=other-issuances&president=rodrigo-roa-duterte&per_page=10&on_order=DESC)  
+The World Bank's [Projects](https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=PH)  
 
 
 ## Data processing
